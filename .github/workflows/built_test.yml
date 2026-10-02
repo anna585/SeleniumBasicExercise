@@ -7,7 +7,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build_test:
+  build_test1:
 
     runs-on: ubuntu-latest
 
@@ -20,7 +20,31 @@ jobs:
       run: dotnet build --no-restore
     - name: Run Project1 tests
       run: dotnet test TestProjects1/TestProject1.csproj --no-build --verbosity normal
+
+  build_test2:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the code
+      uses: actions/checkout@v4
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restorel
     - name: Run Project2 tests
       run: dotnet test TestProjects2/TestProject2.csproj --no-build --verbosity normal
+      
+  build_test3:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the code
+      uses: actions/checkout@v4
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
     - name: Run Project3 tests
-      run: dotnet test TestProjects3/TestProject3.csproj --no-build --verbosity normal
+      run: dotnet test TestProjects3/TestProject3.csproj --no-build --verbosity normal      
