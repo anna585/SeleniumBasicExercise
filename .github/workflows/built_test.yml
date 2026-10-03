@@ -25,4 +25,8 @@ jobs:
         run: dotnet build --no-restore
 
       - name: Run tests
+<<<<<<< HEAD
         run: dotnet test ${{ matrix.project }}/${{ matrix.project }}.csproj --no-build --verbosity normal
+=======
+        run: dotnet test ${{ matrix.project }}/${{ matrix.project }}.csproj --no-build --verbosity normal
+>>>>>>> bb77fccaec107327d43b4d7b5a0c88a6b675a31d
